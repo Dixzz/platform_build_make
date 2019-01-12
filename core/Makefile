@@ -3053,10 +3053,10 @@ $(INTERNAL_OTA_PACKAGE_TARGET): $(BUILT_TARGET_FILES_PACKAGE) \
 
 TARGET_PACKAGE := $(PRODUCT_OUT)/$(PEARL_VERSION).zip
 
-.PHONY: otapackage bacon pearl
+.PHONY: otapackage bacon pearl zerotwo
 otapackage: $(INTERNAL_OTA_PACKAGE_TARGET)
 bacon: otapackage
-bacon: pearl
+bacon: pearl zerotwo
 pearl: otapackage
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(TARGET_PACKAGE)
 	$(hide) $(MD5SUM) $(TARGET_PACKAGE) > $(TARGET_PACKAGE).md5sum
